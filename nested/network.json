@@ -110,8 +110,11 @@
             "apiVersion": "2019-11-01",
             "location": "[parameters('moodleCommon').location]",
             "name": "[parameters('moodleCommon').gatewayPublicIPName]",
-            "properties": {
-                "publicIPAllocationMethod": "Dynamic"
+            "sku": {
+				"name": "Standard"
+			},
+			"properties": {
+                "publicIPAllocationMethod": "Static"
             },
             "tags": {
                 "displayName": "Virtual network gateway Public IP"
@@ -220,7 +223,7 @@
             "location": "[parameters('moodleCommon').location]",
             "name": "[parameters('moodleCommon').appGwPipName]",
             "sku" : {
-                "name" : "[if(endswith(parameters('moodleCommon').appGwSkuName,'v2'),'Standard','Basic')]"
+                "name" : "Standard"
             },
             "properties": {                
                 "dnsSettings": {
@@ -234,6 +237,9 @@
             "apiVersion": "2019-11-01",
             "location": "[parameters('moodleCommon').location]",
             "name": "[parameters('moodleCommon').ctlrPipName]",
+			"sku" : {
+				"name": "Standard"
+			},
             "properties": {
                 "dnsSettings": {
                     "domainNameLabel": "[parameters('moodleCommon').ctlrPipName]"

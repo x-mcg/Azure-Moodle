@@ -80,7 +80,7 @@
             "type": "bool"
         },
         "enableAccelNwForCtlrVmSwitch": {
-            "defaultValue": false,
+            "defaultValue": true,
             "metadata": {
                 "description": "Switch to enable Azure Accelerated Networking on the controller VM. Default to false because currently the default controller VM SKU (D1) doesn't support AN. Change this to true if you set the controller VM SKU to eligibible ones (e.g., D2) for better performance."
             },
@@ -672,7 +672,7 @@
             "type": "string"
         },
         "azureSearchSku": {
-            "defaultValue": "basic",
+            "defaultValue": "standard",
             "allowedValues": [
                 "free",
                 "basic",
@@ -773,7 +773,6 @@
         "loadBalancerSku": {
             "defaultValue": "Standard",
             "allowedValues": [
-                "Basic",
                 "Standard"
             ],
             "metadata": {
